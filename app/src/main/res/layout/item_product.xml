@@ -26,7 +26,7 @@
             <ImageView
                 android:id="@+id/product_image_1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="350px"
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
                 android:src="@drawable/default_product_image" />
@@ -53,7 +53,7 @@
                 android:layout_marginTop="8dp"/>
 
             <TextView
-                android:id="@+id/product_pax_1"
+                android:id="@+id/product_size_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/product_description_1"
@@ -67,7 +67,7 @@
                 android:id="@+id/product_price_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/product_pax_1"
+                android:layout_below="@id/product_size_1"
                 android:textColor="@color/black"
                 android:text="₱0.00"
                 android:textSize="14sp"
@@ -98,7 +98,7 @@
             <ImageView
                 android:id="@+id/product_image_2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="350px"
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
                 android:src="@drawable/default_product_image" />
@@ -125,7 +125,7 @@
                 android:layout_marginTop="8dp"/>
 
             <TextView
-                android:id="@+id/product_pax_2"
+                android:id="@+id/product_size_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/product_description_2"
@@ -139,7 +139,7 @@
                 android:id="@+id/product_price_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/product_pax_2"
+                android:layout_below="@id/product_size_2"
                 android:textColor="@color/black"
                 android:text="₱0.00"
                 android:textSize="14sp"

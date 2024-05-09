@@ -64,7 +64,7 @@ public class CategoryList extends AppCompatActivity implements CategoryAdapter.O
 
 
     private void fetchCategoriesFromServer() {
-        String url = "http://192.168.1.11/CRS/includes/categories.php"; // Replace with your actual URL
+        String url = "http://192.168.1.11/KACSC/includes/categories.php"; // Replace with your actual URL
 
         // Create a request using Volley
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null,

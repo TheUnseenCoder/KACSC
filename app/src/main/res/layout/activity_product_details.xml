@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:background="@drawable/bg4"
+    tools:context=".ProductDetailsActivity">
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true">
+
+        <!-- ImageView for the image -->
+        <ImageView
+            android:id="@+id/website_icon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/logo"
+            android:contentDescription="Website Icon" />
+
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/linear"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textViewProductName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:text="Product Name"
+                android:textColor="@color/orange"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewProductDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Product Description"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_below="@id/textViewProductName"
+                android:layout_marginTop="8dp"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:id="@+id/baseprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexenddeca"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                android:layout_below="@id/textViewProductDescription"
+                android:layout_centerHorizontal="true"/>
+
+
+            <ImageView
+                android:id="@+id/images_container"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:layout_below="@id/baseprice"/>
+
+            <TextView
+                android:id="@+id/Lblinclusion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/images_container"
+                android:layout_marginTop="16dp"
+                android:text="Size:"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/inclusiontext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Lblinclusion"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:text="inclusion here" />
+
+            <TextView
+                android:id="@+id/Lblfreebies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/inclusiontext"
+                android:layout_marginTop="16dp"
+                android:text="Flavor:"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/freebiestext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Lblfreebies"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:text="flavor here" />
+
+            <TextView
+                android:id="@+id/LblQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/freebiestext"
+                android:layout_marginTop="16dp"
+                android:text="Quantity:"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/quantitytext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:layout_below="@id/LblQuantity"
+                android:textColor="@color/black"
+                android:hint="Insert Quantity" />
+
+            <CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/quantitytext"
+                android:theme="@style/CustomCalendarViewTheme"
+                android:background="@color/black" />
+
+            <Button
+                android:id="@+id/time_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select Time"
+                android:textColor="@color/white"
+                android:layout_below="@id/calendarView"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_corner_background"
+                android:padding="12dp" />
+
+            <TextView
+                android:id="@+id/LblAdditionals"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/time_button"
+                android:layout_marginTop="16dp"
+                android:text="Additionals:"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/additionalstext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/LblAdditionals"
+                android:textColor="@color/black"
+                android:lines="8"
+                android:minLines="6"
+                android:gravity="top|start"
+                android:maxLines="10"
+                android:textSize="15sp"
+                android:hint="Any additional: Dedication Name and etc." />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="21dp"
+                android:layout_below="@id/additionalstext">
+
+            <Button
+                android:id="@+id/favorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Favorites"
+                android:layout_marginRight="20dp"/>
+
+            <Button
+                android:id="@+id/buttonBuyNow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@id/favorite"
+                android:layout_alignRight="@id/favorite"
+                android:layout_below="@id/favorite"
+                android:layout_marginEnd="-152dp"
+                android:layout_marginRight="-152dp"
+                android:text="Buy Now"
+                android:layout_centerHorizontal="true"/>
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:src="@drawable/menu"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp" />
+</RelativeLayout>

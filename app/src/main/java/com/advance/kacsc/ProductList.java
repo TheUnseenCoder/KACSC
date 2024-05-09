@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,6 +33,7 @@ import java.util.List;
 public class ProductList extends AppCompatActivity implements ProductAdapter.OnProductClickListener {
     private static final String PREF_EMAIL = "email";
     private String email;
+    private String productId;
     private RecyclerView recyclerView;
     private ProductAdapter adapter;
     private List<Product> products;
@@ -77,16 +80,21 @@ public class ProductList extends AppCompatActivity implements ProductAdapter.OnP
         // Initialize data list
         products = new ArrayList<>();
         categoryname = getIntent().getStringExtra("CATEGORY_NAME");
+        TextView labelTitle = findViewById(R.id.LabelTitle);
+        labelTitle.setText(categoryname);
         Toast.makeText(ProductList.this, categoryname, Toast.LENGTH_SHORT).show();
 
         // Fetch data using Volley
         fetchProductsFromServer(categoryname);
+
+
+
     }
 
 
 
     private void fetchProductsFromServer(String categoryname) {
-        String url = "http://192.168.1.11/CRS/includes/products.php?category_name=" + categoryname; // Replace with your actual URL
+        String url = "http://192.168.1.11/KACSC/includes/products.php?category_name=" + categoryname; // Replace with your actual URL
 
         // Create a request using Volley
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null,
@@ -101,12 +109,13 @@ public class ProductList extends AppCompatActivity implements ProductAdapter.OnP
                                 product.setProductId(jsonObject.getString("product_id"));
                                 product.setName(jsonObject.getString("name"));
                                 product.setDescription(jsonObject.getString("description"));
-                                product.setPax(jsonObject.getInt("pax"));
+                                product.setSize(jsonObject.getString("size"));
                                 product.setBasePrice(jsonObject.getDouble("base_price"));
                                 byte[] imageData = Base64.decode(jsonObject.getString("image"), Base64.DEFAULT);
                                 Bitmap bitmap = BitmapFactory.decodeByteArray(imageData, 0, imageData.length);
                                 product.setImage(bitmap);
                                 products.add(product);
+
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
@@ -132,12 +141,13 @@ public class ProductList extends AppCompatActivity implements ProductAdapter.OnP
 
     @Override
     public void onProductClick(Product product) {
-        // Handle product click here
-        // For example, you can start the ProductDetailsActivity and pass the product_id
+
         String email = getIntent().getStringExtra("email");
         Intent intent = new Intent(this, ProductDetailsActivity.class);
         intent.putExtra("PRODUCT_ID", product.getProductId());
         intent.putExtra("email", email);
         startActivity(intent);
     }
+
+
 }

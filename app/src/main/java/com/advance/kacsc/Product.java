@@ -7,7 +7,7 @@ public class Product {
     private String name;
     private double basePrice;
     private Bitmap image;
-    private Integer pax;
+    private String size;
     private String description;
 
     // Constructor
@@ -39,12 +39,12 @@ public class Product {
         this.description = description;
     }
 
-    public Integer getPax() {
-        return pax;
+    public String getSize() {
+        return size;
     }
 
-    public void setPax(Integer pax) {
-        this.pax = pax;
+    public void setSize(String size) {
+        this.size = size;
     }
 
     public double getBasePrice() {
